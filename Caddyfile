@@ -1,0 +1,15 @@
+# Пока работаем по IP (без домена)
+:80 {
+    # Маршрут для первого демо
+    reverse_proxy demo1:8000
+    
+    # Логи 
+    log {
+        output stdout
+    }
+}
+
+# Когда появится домен
+# demo1.mydomen.ru {
+#     reverse_proxy demo1:8000
+# }
