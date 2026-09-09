@@ -1,9 +1,17 @@
 # Пока работаем по IP (без домена)
 :80 {
-    # Маршрут для первого демо
-    reverse_proxy demo1:8000
-    
-    # Логи 
+    # Раздаем статические файлы из папки /srv внутри контейнера
+    handle / {
+        root * /srv
+        file_server
+    }
+
+    # Когда будет app1
+    # handle /app1/* {
+    #     uri strip_prefix /app1
+    #     reverse_proxy app1:8000
+    # }
+
     log {
         output stdout
     }
