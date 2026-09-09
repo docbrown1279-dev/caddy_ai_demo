@@ -6,11 +6,10 @@
         file_server
     }
 
-    # Когда будет app1
-    # handle /app1/* {
-    #     uri strip_prefix /app1
-    #     reverse_proxy app1:8000
-    # }
+    handle /transcriber/* {
+        uri strip_prefix /transcriber
+        reverse_proxy transcriber:8000   # ← Имя + внутренний порт
+    }
 
     log {
         output stdout
