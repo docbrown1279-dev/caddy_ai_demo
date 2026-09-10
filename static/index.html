@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Demo Server</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; background: #f4f4f9; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
-        h1 { color: #333; margin-bottom: 10px; }
-        p { color: #666; }
-        .status { display: inline-block; margin-top: 20px; padding: 8px 16px; background: #e6fffa; color: #047857; border-radius: 20px; font-weight: bold; }
+        /* ... твои стили ... */
+        .app-list a { 
+            display: block; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; 
+            text-decoration: none; 
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .app-list a:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>🚀 AI Demo Server</h1>
-        <p>Сервер успешно запущен и готов к работе.</p>
-        <div class="status">Caddy Proxy: Active</div>
-        <p style="margin-top: 30px; font-size: 0.9em;">Приложения будут доступны по маршрутам:<br><code>/app1</code>, <code>/app2</code></p>
+        <p>Выберите приложение для демонстрации:</p>
+        <ul class="app-list">
+            <li>
+                <a href="http://217.197.115.202:8080">
+                    <div class="app-name">🎙️ Meeting Transcriber</div>
+                    <div class="description">Расшифровка аудио и видео в текст (Demo)</div>
+                </a>
+            </li>
+            <!-- Сюда потом App 2 на порту 8081 и т.д. -->
+        </ul>
     </div>
 </body>
 </html>

@@ -4,13 +4,17 @@
     handle / {
         root * /srv
         file_server
+
+	}
+    log {
+        output stdout
     }
 
-    handle /transcriber/* {
-        uri strip_prefix /transcriber
-        reverse_proxy transcriber:8000   # ← Имя + внутренний порт
-    }
+}
 
+
+:8080 {
+    reverse_proxy transcriber:8000
     log {
         output stdout
     }
